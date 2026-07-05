@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>Hotel Paradise - Sales Report</title>
+
+    <style>
+
+        *{
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+        font-family:Arial,sans-serif;
+        }
+
+        body{
+
+        background:#f4f4f4;
+
+        padding:40px;
+
+        }
+
+        h1{
+
+        text-align:center;
+
+        color:#ff6600;
+
+        margin-bottom:40px;
+
+        }
+
+        .container{
+
+        display:flex;
+
+        justify-content:center;
+
+        gap:30px;
+
+        flex-wrap:wrap;
+
+        }
+
+        .card{
+
+        width:300px;
+
+        background:white;
+
+        padding:30px;
+
+        border-radius:20px;
+
+        text-align:center;
+
+        box-shadow:0 5px 15px rgba(0,0,0,.2);
+
+        transition:.3s;
+
+        }
+
+        .card:hover{
+
+        transform:translateY(-8px);
+
+        }
+
+        .icon{
+
+        font-size:45px;
+
+        margin-bottom:15px;
+
+        }
+
+        .title{
+
+        font-size:22px;
+
+        font-weight:bold;
+
+        color:#555;
+
+        }
+
+        .value{
+
+        margin-top:15px;
+
+        font-size:38px;
+
+        font-weight:bold;
+
+        color:#ff6600;
+
+        }
+
+        .footer{
+
+        margin-top:60px;
+
+        text-align:center;
+
+        font-size:18px;
+
+        color:green;
+
+        font-weight:bold;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>📊 HOTEL PARADISE SALES DASHBOARD</h1>
+
+<div th:replace="navbar :: navbar"></div>
+
+    <div class="card">
+
+        <div class="icon">📦</div>
+
+        <div class="title">
+            Total Orders
+        </div>
+
+        <div class="value"
+             th:text="${report.totalOrders}">
+        </div>
+
+    </div>
+
+    <div class="card">
+
+        <div class="icon">💰</div>
+
+        <div class="title">
+            Total Revenue
+        </div>
+
+        <div class="value">
+            ₹ <span th:text="${report.totalRevenue}"></span>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="footer">
+
+    ✅ Restaurant Management System Running Successfully
+
+</div>
+<footer style="
+    margin-top:40px;
+    text-align:center;
+    padding:20px;
+    color:#666;
+    font-size:16px;">
+
+    <hr><br>
+
+    🍽 <b>Hotel Paradise Restaurant Management System</b><br><br>
+
+    Developed By <b>Sahana R</b><br>
+
+    Spring Boot | Thymeleaf | MySQL | HTML | CSS
+
+</footer>
+
+</body>
+
+</html>

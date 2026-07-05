@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Order Successful</title>
+
+    <style>
+        *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:'Segoe UI',sans-serif;
+     }
+
+  body{
+
+      height:100vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      background:#f5f5f5;
+
+  }
+
+  .card{
+
+      width:500px;
+      background:white;
+      border-radius:20px;
+      padding:40px;
+      text-align:center;
+      box-shadow:0 10px 25px rgba(0,0,0,.15);
+
+  }
+
+  .tick{
+
+      font-size:70px;
+      margin-bottom:20px;
+
+  }
+
+  h1{
+
+      color:#4CAF50;
+      margin-bottom:15px;
+
+  }
+
+  p{
+
+      font-size:18px;
+      color:#555;
+
+  }
+
+  .msg{
+
+      margin:30px 0;
+      background:#f8f8f8;
+      border-radius:15px;
+      padding:25px;
+      line-height:1.8;
+      color:#444;
+
+  }
+
+  a{
+
+      display:inline-block;
+      text-decoration:none;
+      background:#ff6600;
+      color:white;
+      padding:15px 35px;
+      border-radius:10px;
+      font-size:18px;
+
+  }
+
+  a:hover{
+
+      background:#e65c00;
+
+  }
+    </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <div class="tick">🍽️</div>
+
+    <h1>Order Confirmed!</h1>
+
+    <p>
+        Thank you,
+        <b th:text="${customerName}">Customer</b>
+    </p>
+
+    <div class="msg">
+
+        ✅ Your order has been sent to the kitchen.
+
+        <br><br>
+
+        🍴 Table Number :
+        <b th:text="${tableId}"></b>
+
+        <br><br>
+
+        ⏳ Estimated Preparation Time :
+        <b>15 - 20 Minutes</b>
+
+        <br><br>
+
+        👨‍🍳 Please relax while our chefs prepare your meal.
+
+    </div>
+
+    <a href="/welcome">
+
+        Order Again
+
+    </a>
+    <a href="/track-order">
+        📋 Track My Order
+    </a>
+
+</div>
+
+</body>
+</html>

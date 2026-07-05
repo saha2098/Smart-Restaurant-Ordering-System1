@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>Hotel Paradise Kitchen</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial,sans-serif;
+        }
+
+        body{
+            background:#f5f5f5;
+            padding:30px;
+        }
+
+        h1{
+            text-align:center;
+            color:#ff6600;
+            margin-bottom:30px;
+        }
+
+        .container{
+            display:flex;
+            flex-wrap:wrap;
+            justify-content:center;
+            gap:25px;
+        }
+
+        .card{
+            width:350px;
+            background:white;
+            border-radius:15px;
+            padding:20px;
+            box-shadow:0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .card h2{
+            color:#ff6600;
+            margin-bottom:15px;
+        }
+
+        .card p{
+            margin:10px 0;
+            font-size:17px;
+        }
+
+        .status{
+            margin-top:15px;
+            padding:10px;
+            text-align:center;
+            background:#ffe0b2;
+            color:#ff6600;
+            font-weight:bold;
+            border-radius:8px;
+        }
+
+        .btns{
+            margin-top:20px;
+            display:flex;
+            justify-content:space-between;
+        }
+
+        .btns form{
+            display:inline;
+        }
+
+        button{
+            border:none;
+            color:white;
+            padding:10px 15px;
+            border-radius:8px;
+            cursor:pointer;
+            font-size:14px;
+        }
+
+        .prepare{
+            background:#ff9800;
+        }
+
+        .ready{
+            background:#2196F3;
+        }
+
+        .served{
+            background:#4CAF50;
+        }
+
+        button:hover{
+            opacity:0.8;
+        }
+        .page{
+            display:flex;
+            flex-direction:column;
+            align-items:center;
+}
+
+    </style>
+
+</head>
+
+<body>
+
+<h1>👨‍🍳 HOTEL PARADISE - KITCHEN DASHBOARD</h1>
+
+<div class="container">
+
+    <div class="card" th:each="order : ${orders}">
+
+        <h2>
+            🍽 Order #
+            <span th:text="${order.id}"></span>
+        </h2>
+
+        <p>
+            👤 <b>Customer :</b>
+            <span th:text="${order.customerName}"></span>
+        </p>
+
+        <p>
+            📞 <b>Phone :</b>
+            <span th:text="${order.phoneNumber}"></span>
+        </p>
+
+        <p>
+            🍴 <b>Table :</b>
+            <span th:text="${order.tableId}"></span>
+        </p>
+
+        <p>
+            💰 <b>Total :</b>
+            ₹ <span th:text="${order.totalAmount}"></span>
+        </p>
+
+        <div class="status">
+            Status :
+            <span th:text="${order.status}"></span>
+        </div>
+
+        <div class="btns">
+
+            <form th:action="@{/kitchen/status}" method="post">
+
+                <input type="hidden"
+                       name="orderId"
+                       th:value="${order.id}">
+
+                <input type="hidden"
+                       name="status"
+                       value="PREPARING">
+
+                <button type="submit" class="prepare">
+                    Preparing
+                </button>
+
+            </form>
+
+            <form th:action="@{/kitchen/status}" method="post">
+
+                <input type="hidden"
+                       name="orderId"
+                       th:value="${order.id}">
+
+                <input type="hidden"
+                       name="status"
+                       value="READY">
+
+                <button type="submit" class="ready">
+                    Ready
+                </button>
+
+            </form>
+
+            <form th:action="@{/kitchen/status}" method="post">
+
+                <input type="hidden"
+                       name="orderId"
+                       th:value="${order.id}">
+
+                <input type="hidden"
+                       name="status"
+                       value="SERVED">
+
+                <button type="submit" class="served">
+                    Served
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+<footer style="
+    margin-top:40px;
+    text-align:center;
+    padding:20px;
+    color:#666;
+    font-size:16px;">
+
+    <hr><br>
+
+    🍽 <b>Hotel Paradise Restaurant Management System</b><br><br>
+
+    Developed By <b>Sahana R</b><br>
+
+    Spring Boot | Thymeleaf | MySQL | HTML | CSS
+
+</footer>
+
+</body>
+
+</html>

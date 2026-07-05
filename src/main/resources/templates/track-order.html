@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Track Order</title>
+
+    <style>
+
+        body{
+            font-family:Arial;
+            background:#f4f4f4;
+            text-align:center;
+            padding:50px;
+        }
+
+        .card{
+            width:600px;
+            margin:auto;
+            background:white;
+            padding:30px;
+            border-radius:20px;
+            box-shadow:0 5px 15px rgba(0,0,0,.2);
+        }
+
+        h1{
+            color:#ff6600;
+        }
+
+        h2{
+            color:#4CAF50;
+            margin-top:30px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>🍽 Order Status</h1>
+
+    <h2 th:text="${status}"></h2>
+
+</div>
+
+</body>
+
+</html>

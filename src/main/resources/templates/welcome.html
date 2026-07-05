@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Paradise</title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Segoe UI',sans-serif;
+        }
+
+        body{
+            height:100vh;
+            background:
+            linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),
+            url('/restaurant-bg.jpg');
+            background-size:cover;
+            background-position:center;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .card{
+
+            width:450px;
+            background:rgba(255,255,255,.15);
+            backdrop-filter:blur(12px);
+            border-radius:20px;
+            padding:40px;
+            color:white;
+            text-align:center;
+
+        }
+
+        h1{
+            color:#ffb703;
+            margin-bottom:10px;
+            font-size:42px;
+        }
+
+        .subtitle{
+
+            margin-bottom:30px;
+            color:#eee;
+        }
+
+        input{
+
+            width:100%;
+            padding:15px;
+            margin:12px 0;
+            border:none;
+            border-radius:10px;
+            outline:none;
+
+        }
+
+        .table{
+
+            margin:20px 0;
+            font-size:18px;
+
+        }
+
+        button{
+
+            width:100%;
+            padding:15px;
+            border:none;
+            border-radius:10px;
+            background:#ff6b00;
+            color:white;
+            font-size:18px;
+            cursor:pointer;
+
+        }
+
+        button:hover{
+
+            background:#e65c00;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>🍽 HOTEL PARADISE</h1>
+
+    <p class="subtitle">
+        Scan QR • Order Food • Enjoy Your Meal
+    </p>
+
+    <form action="/menu-v2" method="get">
+
+        <input
+                type="text"
+                name="customerName"
+                placeholder="Enter Your Name"
+                required>
+
+        <input
+                type="text"
+                name="phoneNumber"
+                placeholder="Enter Phone Number"
+                required>
+
+        <div class="table">
+
+            🍽 Table Number :
+            <b th:text="${tableId}"></b>
+
+        </div>
+        <input
+                type="hidden"
+                name="tableId"
+                th:value="${tableId}">
+        <button type="submit">
+
+            Start Ordering
+
+        </button>
+
+    </form>
+
+</div>
+
+</body>
+</html>

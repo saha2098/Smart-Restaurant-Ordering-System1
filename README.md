@@ -1,141 +1,194 @@
 # 🍽 Smart Restaurant Ordering System
 
-A QR-Based Restaurant Ordering System developed using **Spring Boot, Thymeleaf and MySQL**. This application enables customers to scan a QR code, browse the menu, place orders digitally, and allows the kitchen to manage orders efficiently.
+A **QR-Based Restaurant Ordering System** developed using **Spring Boot, Thymeleaf, MySQL, HTML, CSS, and Java**.
+
+This application allows customers to scan a QR code, browse the menu, place food orders, make payments, track their order status, and enables restaurant staff to manage orders through an admin dashboard and kitchen dashboard.
 
 ---
 
-# 📌 Features
+# 🚀 Features
 
-## 👨‍🍳 Customer Module
+## 👤 Customer Module
 
-- QR-Based Table Ordering
-- Customer Name & Phone Registration
-- Digital Food Menu
-- Food Search
-- Best Seller Highlight
-- Food Ratings
-- Add to Cart
-- Update Quantity
-- Remove Items
-- Checkout
-- Payment Page (Demo)
+- Welcome Page
+- QR-Based Restaurant Access
+- Browse Food Menu
+- Add Items to Cart
+- Update Cart Quantity
+- Checkout Page
+- Payment Page
 - Order Confirmation
+- Track Order Status
 
 ---
 
 ## 👨‍🍳 Kitchen Module
 
-- Kitchen Dashboard
 - View Incoming Orders
-- Pending Orders
-- Preparing Orders
-- Served Orders
-- Order Status Updates
+- View Customer Details
+- Update Order Status
+  - Pending
+  - Preparing
+  - Served
 
 ---
 
 ## 👨‍💼 Admin Module
 
-- Add Food Items
-- Update Food Items
-- View Sales Report
-- Total Revenue
+- Admin Dashboard
+- Kitchen Dashboard
+- Sales Report
 - Total Orders
+- Total Revenue
+- Pending Orders
+- Food Menu Overview
 
 ---
 
-# 🛠 Tech Stack
+# 🛠 Technologies Used
 
-### Backend
-- Java
+- Java 21
 - Spring Boot
 - Spring MVC
-- Spring Data JPA
-- Hibernate
-
-### Frontend
-- HTML
-- CSS
-- JavaScript
 - Thymeleaf
-
-### Database
 - MySQL
-
-### IDE
-- IntelliJ IDEA
-
----
-
-# 🏗 Project Architecture
-
-```text
-Customer
-     │
-     ▼
- Welcome Page
-     │
-     ▼
- Menu Page
-     │
-     ▼
- Shopping Cart
-     │
-     ▼
- Checkout
-     │
-     ▼
- Payment
-     │
-     ▼
- Order Placed
-     │
-     ▼
- Kitchen Dashboard
-     │
-     ▼
- Order Status
-```
+- HTML5
+- CSS3
+- Maven
+- Git
+- GitHub
 
 ---
 
 # 📂 Project Structure
 
-```
-src
- ├── controller
- ├── service
- ├── repository
- ├── entity
- ├── dto
- ├── model
- ├── templates
- └── static
+```text
+restaurant-ordering-system
+│
+├── screenshots
+│
+├── src
+│   ├── main
+│   │   ├── java
+│   │   │   ├── Controller
+│   │   │   ├── Service
+│   │   │   ├── Repository
+│   │   │   ├── Entity
+│   │   │   └── RestaurantOrderingSystemApplication.java
+│   │   │
+│   │   ├── resources
+│   │   │   ├── templates
+│   │   │   ├── static
+│   │   │   └── application.properties
+│
+├── pom.xml
+│
+└── README.md
 ```
 
 ---
 
-# 🚀 How To Run
+# 📸 Application Screenshots
 
-### Clone Repository
+## 🏠 Welcome Page
+
+![Welcome](screenshots/welcome.png)
+
+---
+
+## 🍽 Menu
+
+![Menu](screenshots/menu.png)
+
+---
+
+## 🛒 Cart
+
+![Cart](screenshots/cart.png)
+
+---
+
+## ✅ Checkout
+
+![Checkout](screenshots/checkout.png)
+
+---
+
+## 💳 Payment
+
+![Payment](screenshots/payment.png)
+
+---
+
+## 🎉 Order Confirmation
+
+![Confirmation](screenshots/confirm.png)
+
+---
+
+## 📍 Track Order
+
+![Track Order](screenshots/order-tracking.png)
+
+---
+
+## 👨‍🍳 Kitchen Dashboard
+
+![Kitchen](screenshots/Kitchen.png)
+
+---
+## 📊 Sales Report
+![Sales Report](screenshots/dashboard.png)
+
+---
+
+## 👨‍💼 Admin Dashboard
+
+![Admin Dashboard](screenshots/admin.png)
+
+---
+
+# ▶️ How to Run
+
+### 1️⃣ Clone the Repository
 
 ```bash
 git clone https://github.com/saha2098/Smart-Restaurant-Ordering-System1.git
 ```
 
-### Open Project
+---
 
-Open the project in IntelliJ IDEA.
+### 2️⃣ Open the Project
 
-### Configure Database
+Open the project using **IntelliJ IDEA**.
 
-Create a MySQL database and update the credentials in:
+---
 
+### 3️⃣ Configure MySQL
+
+Create a MySQL database.
+
+Example:
+
+```sql
+CREATE DATABASE restaurant_db;
 ```
-application.properties
+
+---
+
+### 4️⃣ Update Database Credentials
+
+Edit the `application.properties` file.
+
+```properties
+spring.datasource.url=jdbc:mysql://localhost:3306/restaurant_db
+spring.datasource.username=root
+spring.datasource.password=YOUR_PASSWORD
 ```
 
-### Run
+---
+
+### 5️⃣ Run the Application
 
 Run:
 
@@ -143,61 +196,59 @@ Run:
 RestaurantOrderingSystemApplication.java
 ```
 
-Open:
+---
+
+### 6️⃣ Open the Browser
 
 ```
-http://localhost:8081/
+http://localhost:8081/welcome
 ```
 
 ---
 
-# 📸 Screenshots
+# 📌 Future Enhancements
 
-### Welcome Page
-
-(Add Screenshot)
-
-### Menu Page
-
-(Add Screenshot)
-
-### Shopping Cart
-
-(Add Screenshot)
-
-### Checkout
-
-(Add Screenshot)
-
-### Payment Page
-
-(Add Screenshot)
-
-### Kitchen Dashboard
-
-(Add Screenshot)
-
-### Sales Report
-
-(Add Screenshot)
+- Online Payment Gateway Integration
+- Admin Login Authentication
+- Customer Login & Registration
+- Table Reservation System
+- Food Reviews & Ratings
+- Email/SMS Order Notifications
+- AI-Based Food Recommendations
+- Mobile Application
 
 ---
 
-# 🔮 Future Enhancements
+# 🎯 Project Highlights
 
-- Online Payment Gateway
-- SMS Notifications
-- Email Notifications
-- Live Order Tracking
-- Android Mobile App
-- Cloud Deployment
+✔ QR-Based Restaurant Ordering
+
+✔ Shopping Cart
+
+✔ Payment Page
+
+✔ Order Tracking
+
+✔ Kitchen Dashboard
+
+✔ Admin Dashboard
+
+✔ Sales Report
+
+✔ Responsive UI
+
+✔ Spring Boot MVC Architecture
+
+✔ MySQL Database Integration
 
 ---
 
-# 👩‍💻 Developer
+# 👩‍💻 Developed By
 
 **Sahana R**
 
 Computer Science Engineering Student
 
-Spring Boot | Java | MySQL | Web Development
+---
+
+# ⭐ If you like this project, don't forget to Star the repository!
